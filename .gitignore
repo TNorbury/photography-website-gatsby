@@ -67,3 +67,6 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# ignore the images part of the media folder, we don't want that in source control
+src/media/images

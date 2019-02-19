@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Germany",
+        "type": "album",
+        "parentAlbum": "home",
+        "image": {
+            "src": "../media/images/germany/thumbnails/germany-thumbnail.jpg"
+        }
+    },
+    {
+        "title": "Munich",
+        "type": "gallery",
+        "parentAlbum": "Germany",
+        "image": {
+            "src": "../media/images/germany/thumbnails/munich-thumbnail.jpg"
+        }
+    },
+    {
+        "title": "Nuremberg",
+        "type": "gallery",
+        "parentAlbum": "Germany",
+        "image": {
+            "src": "../media/images/germany/thumbnails/nuremberg-thumbnail.jpg"
+        }
+    }
+]
