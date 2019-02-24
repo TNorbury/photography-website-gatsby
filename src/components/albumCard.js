@@ -7,10 +7,12 @@ import { css } from '@emotion/core';
 // albums, or a gallery
 export default ({ title, thumbnail, link }) => {
     return (
-        <Col md="auto"
+        <Col
+            md="auto"
             css={css`
                 margin-top: 20px;
-            `}>
+            `}
+        >
             <Link to={link}>
                 <Card>
                     <CardImg src={thumbnail} />
@@ -19,6 +21,6 @@ export default ({ title, thumbnail, link }) => {
                     </CardBody>
                 </Card>
             </Link>
-        </Col> 
+        </Col>
     );
 };

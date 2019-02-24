@@ -12,9 +12,7 @@ export default ({ data }) => {
                     {data.allAlbumsJson.edges.map(({ node }) => (
                         <AlbumCard
                             title={node.title}
-                            thumbnail={
-                                node.thumbnail.childImageSharp.fixed.src
-                            }
+                            thumbnail={node.thumbnail.childImageSharp.fixed.src}
                             link={'/' + node.title.toLowerCase()}
                         />
                     ))}

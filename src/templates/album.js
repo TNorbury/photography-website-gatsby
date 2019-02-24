@@ -5,7 +5,6 @@ import AlbumCard from '../components/albumCard';
 import { Container, Row } from 'reactstrap';
 
 export default ({ data }) => {
-
     return (
         <Layout>
             <Container>
@@ -14,7 +13,9 @@ export default ({ data }) => {
                         <AlbumCard
                             title={node.title}
                             thumbnail={node.thumbnail.childImageSharp.fixed.src}
-                            link={node.parentAlbum.toLowerCase() + '/' + node.title.toLowerCase()}
+                            link={
+                                node.parentAlbum.toLowerCase() + '/' + node.title.toLowerCase()
+                            }
                         />
                     ))}
                 </Row>
@@ -25,7 +26,7 @@ export default ({ data }) => {
 
 export const query = graphql`
     query($parent: String) {
-        allAlbumsJson(filter: {parentAlbum: {eq: $parent}}) {
+        allAlbumsJson(filter: { parentAlbum: { eq: $parent } }) {
             edges {
                 node {
                     title

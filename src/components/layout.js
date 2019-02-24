@@ -35,10 +35,8 @@ export default class Layout extends React.Component {
     render() {
         return (
             <div>
-                <Navbar color='light' light>
-                    <Link
-                        to="/"
-                    >
+                <Navbar color="light" light>
+                    <Link to="/">
                         <NavbarBrand>Tyler Norbury Photography</NavbarBrand>
                     </Link>
                 </Navbar>
