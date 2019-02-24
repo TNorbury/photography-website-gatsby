@@ -1,8 +1,8 @@
-import React from "react";
-import Layout from "../components/layout";
-import AlbumCard from "../components/albumCard";
-import { graphql } from "gatsby";
-import { Container, Row, Col } from "reactstrap";
+import React from 'react';
+import Layout from '../components/layout';
+import AlbumCard from '../components/albumCard';
+import { graphql } from 'gatsby';
+import { Container, Row } from 'reactstrap';
 
 export default ({ data }) => {
     return (
@@ -10,14 +10,13 @@ export default ({ data }) => {
             <Container>
                 <Row>
                     {data.allAlbumsJson.edges.map(({ node }) => (
-                        <Col xs="auto">
-                            <AlbumCard
-                                title={node.title}
-                                thumbnail={
-                                    node.image.src.childImageSharp.fluid.src
-                                }
-                            />
-                        </Col>
+                        <AlbumCard
+                            title={node.title}
+                            thumbnail={
+                                node.thumbnail.childImageSharp.fixed.src
+                            }
+                            link={'/' + node.title.toLowerCase()}
+                        />
                     ))}
                 </Row>
             </Container>
@@ -33,12 +32,10 @@ export const query = graphql`
                     title
                     type
                     parentAlbum
-                    image {
-                        src {
-                            childImageSharp {
-                                fluid {
-                                    src
-                                }
+                    thumbnail {
+                        childImageSharp {
+                            fixed(width: 300, height: 300, quality: 90) {
+                                src
                             }
                         }
                     }

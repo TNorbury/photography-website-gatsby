@@ -3,24 +3,56 @@
         "title": "Germany",
         "type": "album",
         "parentAlbum": "home",
-        "image": {
-            "src": "../media/images/germany/thumbnails/germany-thumbnail.jpg"
-        }
+        "thumbnail": "../media/images/germany/thumbnails/germany-thumbnail.jpg"
     },
     {
         "title": "Munich",
         "type": "gallery",
         "parentAlbum": "Germany",
-        "image": {
-            "src": "../media/images/germany/thumbnails/munich-thumbnail.jpg"
-        }
+        "imageLocations": [
+            "media/images/germany/munich",
+            "media/images/germany/munich/film"
+        ],
+        "thumbnail": "../media/images/germany/thumbnails/munich-thumbnail.jpg"
     },
     {
         "title": "Nuremberg",
         "type": "gallery",
         "parentAlbum": "Germany",
-        "image": {
-            "src": "../media/images/germany/thumbnails/nuremberg-thumbnail.jpg"
-        }
+        "imageLocations": [
+            "media/images/germany/nuremberg",
+            "media/images/germany/nuremberg/film"
+        ],
+        "thumbnail": "../media/images/germany/thumbnails/nuremberg-thumbnail.jpg"
+    },
+    {
+        "title": "Leipzig & Wittenberg",
+        "type": "gallery",
+        "parentAlbum": "Germany",
+        "imageLocations": [
+            "media/images/germany/leipzig",
+            "media/images/germany/leipzig/film"
+        ],
+        "thumbnail": "../media/images/germany/thumbnails/leipzig-thumbnail.jpg"
+    },
+    {
+        "title": "Dresden",
+        "type": "gallery",
+        "parentAlbum": "Germany",
+        "imageLocations": [
+            "media/images/germany/dresden",
+            "media/images/germany/dresden/film"
+        ],
+        "thumbnail": "../media/images/germany/thumbnails/dresden-thumbnail.jpg"
+    },
+    {
+        "title": "Berlin",
+        "type": "gallery",
+        "parentAlbum": "Germany",
+        "imageLocations": [
+            "media/images/germany/berlin",
+            "media/images/germany/berlin/film"
+        ],
+        "thumbnail": "../media/images/germany/thumbnails/berlin-thumbnail.jpg"
     }
 ]
