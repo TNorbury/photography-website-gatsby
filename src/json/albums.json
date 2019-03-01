@@ -54,5 +54,12 @@
             "media/images/germany/berlin/film"
         ],
         "thumbnail": "../media/images/germany/thumbnails/berlin-thumbnail.jpg"
+    },
+    {
+        "title": "Colorado",
+        "type": "gallery",
+        "parentAlbum": "home",
+        "imageLocations": ["media/images/colorado"],
+        "thumbnail": "../media/images/colorado/thumbnail/colorado-thumbnail.jpg"
     }
 ]

@@ -14,8 +14,7 @@ import {
     DropdownItem,
 } from 'reactstrap';
 
-import { Link } from 'gatsby';
-import { css } from '@emotion/core';
+import { Link, StaticQuery, graphql } from 'gatsby';
 
 export default class Layout extends React.Component {
     constructor(props) {
@@ -34,14 +33,60 @@ export default class Layout extends React.Component {
 
     render() {
         return (
-            <div>
-                <Navbar color="light" light>
-                    <Link to="/">
-                        <NavbarBrand>Tyler Norbury Photography</NavbarBrand>
-                    </Link>
-                </Navbar>
-                {this.props.children}
-            </div>
+            <StaticQuery
+                query={graphql`
+                    query {
+                        allSitePage(
+                            filter: { path: { nin: ["/", "/dev-404-page/"] } }
+                        ) {
+                            edges {
+                                node {
+                                    path
+                                    context {
+                                        parent
+                                    }
+                                }
+                            }
+                        }
+                    }
+                `}
+                render={data => (
+                    <div>
+                        <Navbar color="light" light expand="md">
+                            <Link to="/">
+                                <NavbarBrand>
+                                    Tyler Norbury Photography
+                                </NavbarBrand>
+                            </Link>
+                            <NavbarToggler onClick={this.toggle} />
+                            <Collapse isOpen={this.state.isOpen} navbar>
+                                <Nav className="ml-auto" navbar>
+                                    <UncontrolledDropdown nav inNavbar>
+                                        <DropdownToggle nav caret>
+                                            Albums
+                                        </DropdownToggle>
+                                        <DropdownMenu right>
+                                            {data.allSitePage.edges.map(({node}) => (
+                                                <Link to={node.path}>
+                                                    <DropdownItem>
+                                                        {node.context.parent}
+                                                    </DropdownItem>
+                                                </Link>
+                                            ))}
+                                        </DropdownMenu>
+                                    </UncontrolledDropdown>
+                                    <NavItem>
+                                        <Link to="/about/">
+                                            <NavLink>About Me</NavLink>
+                                        </Link>
+                                    </NavItem>
+                                </Nav>
+                            </Collapse>
+                        </Navbar>
+                        {this.props.children}
+                    </div>
+                )}
+            />
         );
     }
 }

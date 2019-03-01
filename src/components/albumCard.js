@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardBody, CardImg, Col, CardText } from 'reactstrap';
+import { Card, CardBody, CardImg, Col, CardText } from 'reactstrap';
 import { Link } from 'gatsby';
 import { css } from '@emotion/core';
 

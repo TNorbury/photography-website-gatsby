@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Col, Modal, ModalBody } from 'reactstrap';
 import { css } from '@emotion/core';
 import Img from 'gatsby-image';
 
