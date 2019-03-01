@@ -37,7 +37,7 @@ export default class Layout extends React.Component {
                 query={graphql`
                     query {
                         allSitePage(
-                            filter: { path: { nin: ["/", "/dev-404-page/"] } }
+                            filter: { path: { nin: ["/", "/dev-404-page/", "/404/"] } }
                         ) {
                             edges {
                                 node {
