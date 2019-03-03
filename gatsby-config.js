@@ -22,7 +22,7 @@ module.exports = {
         options: {
             bucketName: 'www.tylernorbury.com',
             protocol: "https",
-            hostname: "www.tylernorbury.com"
+            hostname: "www.tylernorbury.com",
             acl: null
         }
     }
