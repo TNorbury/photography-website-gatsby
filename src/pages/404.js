@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../components/layout';
 
 export default ({ data }) => {
     return (
-        <div>
-            Page not found, sorry
-        </div>
+        <Layout>
+            <div>Page not found, sorry</div>
+        </Layout>
     );
-}
+};

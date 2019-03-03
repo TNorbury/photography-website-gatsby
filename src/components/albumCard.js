@@ -8,9 +8,10 @@ import { css } from '@emotion/core';
 export default ({ title, thumbnail, link }) => {
     return (
         <Col
-            md="auto"
+            md="4"
             css={css`
                 margin-top: 20px;
+                margin-bottom: 20px;
             `}
         >
             <Link to={link}>

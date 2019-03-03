@@ -13,7 +13,9 @@ import {
     DropdownMenu,
     DropdownItem,
 } from 'reactstrap';
-
+import { css } from '@emotion/core';
+import { Helmet } from 'react-helmet';
+import '../styles/global.css';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 export default class Layout extends React.Component {
@@ -37,7 +39,9 @@ export default class Layout extends React.Component {
                 query={graphql`
                     query {
                         allSitePage(
-                            filter: { path: { nin: ["/", "/dev-404-page/", "/404/"] } }
+                            filter: {
+                                path: { nin: ["/", "/dev-404-page/", "/404/"] }
+                            }
                         ) {
                             edges {
                                 node {
@@ -51,8 +55,22 @@ export default class Layout extends React.Component {
                     }
                 `}
                 render={data => (
-                    <div>
-                        <Navbar color="light" light expand="md">
+                    <div
+                        css={css`
+                            background-color: #efebe9;
+                        `}
+                    >
+                        <Helmet>
+                            <meta charSet="utf-8" />
+                            <meta name="Description" content="Tyler Norbury's Photography Portfolio" />
+                            <title>Tyler Norbury Photography</title>
+                        </Helmet>
+                        <Navbar
+                            expand="md"
+                            css={css`
+                                background-color: #bdb9b7;
+                            `}
+                        >
                             <Link to="/">
                                 <NavbarBrand>
                                     Tyler Norbury Photography
@@ -66,13 +84,18 @@ export default class Layout extends React.Component {
                                             Albums
                                         </DropdownToggle>
                                         <DropdownMenu right>
-                                            {data.allSitePage.edges.map(({node}) => (
-                                                <Link to={node.path}>
-                                                    <DropdownItem>
-                                                        {node.context.parent}
-                                                    </DropdownItem>
-                                                </Link>
-                                            ))}
+                                            {data.allSitePage.edges.map(
+                                                ({ node }) => (
+                                                    <Link to={node.path}>
+                                                        <DropdownItem>
+                                                            {
+                                                                node.context
+                                                                    .parent
+                                                            }
+                                                        </DropdownItem>
+                                                    </Link>
+                                                )
+                                            )}
                                         </DropdownMenu>
                                     </UncontrolledDropdown>
                                     <NavItem>

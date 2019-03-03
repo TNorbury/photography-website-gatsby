@@ -3,11 +3,16 @@ import Layout from '../components/layout';
 import AlbumCard from '../components/albumCard';
 import { graphql } from 'gatsby';
 import { Container, Row } from 'reactstrap';
+import { css } from '@emotion/core';
 
 export default ({ data }) => {
     return (
         <Layout>
-            <Container>
+            <Container
+                css={css`
+                    margin-right: auto;
+                `}
+            >
                 <Row>
                     {data.allAlbumsJson.edges.map(({ node }) => (
                         <AlbumCard

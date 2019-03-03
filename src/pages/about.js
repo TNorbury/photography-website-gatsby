@@ -8,7 +8,7 @@ import { css } from '@emotion/core';
 export default ({ data }) => {
     return (
         <Layout>
-            <Container>
+            <Container css={css`padding: 5px`}>
                 <Row>
                     <Col>
                         {data.allImageSharp.edges.map(({ node }) => (

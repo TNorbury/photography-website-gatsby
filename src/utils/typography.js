@@ -4,8 +4,13 @@ import twinPeaksTheme from 'typography-theme-twin-peaks';
 twinPeaksTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     a: {
         backgroundImage: '',
-        color: 'inherit',
+        color: 'black',
+        background_color: 'inherit',
+        textShadow: ''
     },
+    'a:hover': {
+        color: '#007ac1'
+    }
 });
 
 const typography = new Typography(twinPeaksTheme);
