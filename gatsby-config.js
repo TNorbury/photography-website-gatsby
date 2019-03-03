@@ -16,6 +16,15 @@ module.exports = {
       }
     },
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`
+    `gatsby-transformer-sharp`,
+    {
+        resolve: `gatsby-plugin-s3`,
+        options: {
+            bucketName: 'www.tylernorbury.com',
+            protocol: "https",
+            hostname: "www.tylernorbury.com"
+            acl: null
+        }
+    }
   ]
 };
