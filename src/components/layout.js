@@ -62,7 +62,10 @@ export default class Layout extends React.Component {
                     >
                         <Helmet>
                             <meta charSet="utf-8" />
-                            <meta name="Description" content="Tyler Norbury's Photography Portfolio" />
+                            <meta
+                                name="Description"
+                                content="Tyler Norbury's Photography Portfolio"
+                            />
                             <title>Tyler Norbury Photography</title>
                         </Helmet>
                         <Navbar
@@ -76,7 +79,7 @@ export default class Layout extends React.Component {
                                     Tyler Norbury Photography
                                 </NavbarBrand>
                             </Link>
-                            <NavbarToggler onClick={this.toggle} />
+                            <NavbarToggler onClick={this.toggle} css={css`border-color: rgba(0,0,0,.25);`}/>
                             <Collapse isOpen={this.state.isOpen} navbar>
                                 <Nav className="ml-auto" navbar>
                                     <UncontrolledDropdown nav inNavbar>
