@@ -50,6 +50,7 @@ export default class Image extends React.Component {
                     toggle={this.toggle}
                     size="xl"
                     fade={true}
+                    onClick={this.toggle}
                 >
                     <ModalBody
                         css={css`
