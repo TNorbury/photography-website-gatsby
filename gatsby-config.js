@@ -42,8 +42,9 @@ module.exports = {
         {
             resolve: `gatsby-plugin-html-attributes`,
             options: {
-                lang: 'en'
-            }
-        }
+                lang: 'en',
+            },
+        },
+        `gatsby-plugin-compression-v2`,
     ],
 };
