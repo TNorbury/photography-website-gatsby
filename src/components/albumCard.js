@@ -16,7 +16,7 @@ export default ({ title, thumbnail, link }) => {
         >
             <Link to={link}>
                 <Card>
-                    <CardImg src={thumbnail} />
+                    <CardImg src={thumbnail} alt="This will link to another page"/>
                     <CardBody>
                         <CardText>{title}</CardText>
                     </CardBody>
