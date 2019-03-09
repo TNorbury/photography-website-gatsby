@@ -8,11 +8,22 @@ import { css } from '@emotion/core';
 export default ({ data }) => {
     return (
         <Layout>
-            <Container css={css`padding: 5px`}>
+            <Container
+                css={css`
+                    padding: 5px;
+                `}
+            >
                 <Row>
                     <Col>
                         {data.allImageSharp.edges.map(({ node }) => (
-                            <Img fluid={node.fluid} />
+                            <a
+                                href="https://twitter.com/Cyan___Ryan"
+                                css={css`
+                                    cursor: context-menu;
+                                `}
+                            >
+                                <Img fluid={node.fluid} />
+                            </a>
                         ))}
                     </Col>
                     <Col>
@@ -35,9 +46,7 @@ export default ({ data }) => {
                                 the{' '}
                                 <a
                                     href="https://www.gatsbyjs.org/"
-                                    css={css`
-                                        text-decoration: underline;
-                                    `}
+                                    class="about-link"
                                 >
                                     GatsbyJS framework
                                 </a>{' '}
@@ -47,9 +56,7 @@ export default ({ data }) => {
                                     <li>
                                         <a
                                             href="https://www.instagram.com/tylernorbury/"
-                                            css={css`
-                                                text-decoration: underline;
-                                            `}
+                                            class="about-link"
                                         >
                                             Instagram
                                         </a>
@@ -57,9 +64,7 @@ export default ({ data }) => {
                                     <li>
                                         <a
                                             href="https://github.com/TNorbury"
-                                            css={css`
-                                                text-decoration: underline;
-                                            `}
+                                            class="about-link"
                                         >
                                             GitHub
                                         </a>
