@@ -45,6 +45,5 @@ module.exports = {
                 lang: 'en',
             },
         },
-        `gatsby-plugin-compression-v2`,
     ],
 };
