@@ -13,9 +13,9 @@ import {
     DropdownMenu,
     DropdownItem,
 } from 'reactstrap';
+import '../styles/global.css';
 import { css } from '@emotion/core';
 import { Helmet } from 'react-helmet';
-import '../styles/global.css';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 export default class Layout extends React.Component {
