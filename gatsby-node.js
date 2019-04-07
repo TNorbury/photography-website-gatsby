@@ -5,6 +5,7 @@ exports.createPages = ({ actions }) => {
     const { createPage } = actions;
     data.forEach(({ title, parentAlbum, type, imageLocations }) => {
         var pagePath = '';
+        var isAlbum = false;
 
         // Only prepend the parent album to the path if it's not on the home page
         if (parentAlbum != 'home') {
@@ -21,6 +22,7 @@ exports.createPages = ({ actions }) => {
         // Albums will serve as a directory for other albums
         if (type == 'album') {
             template = path.resolve(`src/templates/album.js`);
+            isAlbum = true;
         }
 
         // Whereas galleries will display images
@@ -37,7 +39,10 @@ exports.createPages = ({ actions }) => {
                 images: imageLocations,
 
                 // The title of the page will serve as the parent
-                parent: title
+                parent: title,
+
+                // Flag to determine if this is an album page, or a gallery page
+                isAlbum: isAlbum,
             },
         });
     });

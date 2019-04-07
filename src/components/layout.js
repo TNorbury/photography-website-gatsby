@@ -40,7 +40,15 @@ export default class Layout extends React.Component {
                     query {
                         allSitePage(
                             filter: {
-                                path: { nin: ["/", "/dev-404-page/", "/404/"] }
+                                path: {
+                                    nin: [
+                                        "/"
+                                        "/dev-404-page/"
+                                        "/404/"
+                                        "/about/"
+                                        "/404.html"
+                                    ]
+                                }
                             }
                         ) {
                             edges {
@@ -48,6 +56,7 @@ export default class Layout extends React.Component {
                                     path
                                     context {
                                         parent
+                                        isAlbum
                                     }
                                 }
                             }
@@ -79,7 +88,12 @@ export default class Layout extends React.Component {
                                     Tyler Norbury Photography
                                 </NavbarBrand>
                             </Link>
-                            <NavbarToggler onClick={this.toggle} css={css`border-color: rgba(0,0,0,.25);`}/>
+                            <NavbarToggler
+                                onClick={this.toggle}
+                                css={css`
+                                    border-color: rgba(0, 0, 0, 0.25);
+                                `}
+                            />
                             <Collapse isOpen={this.state.isOpen} navbar>
                                 <Nav className="ml-auto" navbar>
                                     <UncontrolledDropdown nav inNavbar>
@@ -88,16 +102,20 @@ export default class Layout extends React.Component {
                                         </DropdownToggle>
                                         <DropdownMenu right>
                                             {data.allSitePage.edges.map(
-                                                ({ node }) => (
-                                                    <Link to={node.path}>
-                                                        <DropdownItem>
-                                                            {
-                                                                node.context
-                                                                    .parent
-                                                            }
-                                                        </DropdownItem>
-                                                    </Link>
-                                                )
+                                                /* Iterate over all of the pages, creating
+                                                an entry in the drop down menu for every one that
+                                                isn't an album */
+                                                ({ node }) =>
+                                                    !node.context.isAlbum && (
+                                                        <Link to={node.path}>
+                                                            <DropdownItem>
+                                                                {
+                                                                    node.context
+                                                                        .parent
+                                                                }
+                                                            </DropdownItem>
+                                                        </Link>
+                                                    )
                                             )}
                                         </DropdownMenu>
                                     </UncontrolledDropdown>

@@ -40,7 +40,7 @@ export default class Image extends React.Component {
                         cursor: pointer;
                     `}
                 >
-                    <Img fluid={this.props.src} alt="this is an image"/>
+                    <Img fluid={this.props.src} alt="this is an image" />
                 </div>
 
                 {/* This modal will pop up upon clicking on an image, allowing
