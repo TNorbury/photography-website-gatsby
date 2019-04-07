@@ -27,6 +27,7 @@ export default class Layout extends React.Component {
             isOpen: false,
         };
     }
+
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen,
@@ -47,6 +48,7 @@ export default class Layout extends React.Component {
                                         "/404/"
                                         "/about/"
                                         "/404.html"
+                                        "/offline-plugin-app-shell-fallback/"
                                     ]
                                 }
                             }
