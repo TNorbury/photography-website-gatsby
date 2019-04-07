@@ -73,3 +73,6 @@ src/media/images
 
 # ignore prettier config
 .prettierrc
+
+# ignore vscode
+.vscode
