@@ -105,6 +105,13 @@
         "imageLocations": ["media/images/portland/2019"],
         "thumbnail": "../media/images/portland/thumbnail/2019.jpg"
     },
+    {
+        "title": "Bridge Walk",
+        "type": "gallery",
+        "parentAlbum": "Portland",
+        "imageLocations": ["media/images/portland/bridges"],
+        "thumbnail": "../media/images/portland/thumbnail/img553.jpg"
+    },
 
     {
         "title": "Photography 2",
