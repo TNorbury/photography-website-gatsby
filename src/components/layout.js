@@ -14,6 +14,7 @@ import {
     DropdownItem,
 } from 'reactstrap';
 import '../styles/global.css';
+import '../styles/navbar.css';
 import { css } from '@emotion/core';
 import { Helmet } from 'react-helmet';
 import { Link, StaticQuery, graphql } from 'gatsby';
@@ -66,11 +67,7 @@ export default class Layout extends React.Component {
                     }
                 `}
                 render={data => (
-                    <div
-                        css={css`
-                            background-color: #efebe9;
-                        `}
-                    >
+                    <div class="layout">
                         <Helmet>
                             <meta charSet="utf-8" />
                             <meta
@@ -79,12 +76,7 @@ export default class Layout extends React.Component {
                             />
                             <title>Tyler Norbury Photography</title>
                         </Helmet>
-                        <Navbar
-                            expand="md"
-                            css={css`
-                                background-color: #bdb9b7;
-                            `}
-                        >
+                        <Navbar expand="md">
                             <Link to="/">
                                 <NavbarBrand>
                                     Tyler Norbury Photography
