@@ -31,7 +31,7 @@ export default class Image extends React.Component {
                 `}
             >
                 {/* This div is just serves as a container so that clicking on the
-                    image will open the modal */}
+                    image will open the modal  */}
                 <div
                     onClick={this.toggle}
                     css={css`
