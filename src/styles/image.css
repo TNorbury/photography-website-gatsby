@@ -1,0 +1,12 @@
+.image {
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 0.25rem;
+    background-color: rgb(255, 255, 255);
+    /* box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.5); */
+}
