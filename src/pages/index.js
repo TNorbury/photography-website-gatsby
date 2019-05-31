@@ -18,7 +18,12 @@ export default ({ data }) => {
                         <AlbumCard
                             title={node.title}
                             thumbnail={node.thumbnail.childImageSharp.fixed.src}
-                            link={'/' + node.title.toLowerCase()}
+                            
+                            // replace spaces w/ -
+                            link={
+                                '/' +
+                                node.title.toLowerCase().replace(/ /g, '-')
+                            }
                         />
                     ))}
                 </Row>
