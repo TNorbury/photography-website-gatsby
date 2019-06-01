@@ -57,6 +57,40 @@
     },
 
     {
+        "title": "Switzerland",
+        "type": "album",
+        "parentAlbum": "home",
+        "thumbnail": "../media/images/switzerland/thumbnails/swiss-thumbnail.jpg"
+    },
+    {
+        "title": "Zürich",
+        "type": "gallery",
+        "parentAlbum": "Switzerland",
+        "imageLocations": [
+            "media/images/switzerland/zurich"
+        ],
+        "thumbnail": "../media/images/switzerland/thumbnails/zurich-thumbnail.jpg"
+    },
+    {
+        "title": "Luzern",
+        "type": "gallery",
+        "parentAlbum": "Switzerland",
+        "imageLocations": [
+            "media/images/switzerland/luzern"
+        ],
+        "thumbnail": "../media/images/switzerland/thumbnails/luzern-thumbnail.jpg"
+    },
+    {
+        "title": "Lauterbrunnen Valley",
+        "type": "gallery",
+        "parentAlbum": "Switzerland",
+        "imageLocations": [
+            "media/images/switzerland/lauterbrunnen valley"
+        ],
+        "thumbnail": "../media/images/switzerland/thumbnails/lauterbrunnen-thumbnail.jpg"
+    },
+
+    {
         "title": "Colorado",
         "type": "gallery",
         "parentAlbum": "home",
