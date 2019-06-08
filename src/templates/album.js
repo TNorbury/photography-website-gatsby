@@ -18,7 +18,7 @@ export default ({ data }) => {
                             link={
                                 node.parentAlbum.toLowerCase() +
                                 '/' +
-                                node.title.toLowerCase().replace(/ /g, '-')
+                                node.title.toLowerCase().replace(/ /g, '-').replace(/ü/g, "u")
                             }
                         />
                     ))}

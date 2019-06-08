@@ -22,7 +22,7 @@ export default ({ data }) => {
                             // replace spaces w/ -
                             link={
                                 '/' +
-                                node.title.toLowerCase().replace(/ /g, '-')
+                                node.title.toLowerCase().replace(/ /g, '-').replace(/ü/g, "u")
                             }
                         />
                     ))}
