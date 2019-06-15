@@ -67,7 +67,8 @@
         "type": "gallery",
         "parentAlbum": "Switzerland",
         "imageLocations": [
-            "media/images/switzerland/zurich"
+            "media/images/switzerland/zurich",
+            "media/images/switzerland/zurich/film"
         ],
         "thumbnail": "../media/images/switzerland/thumbnails/zurich-thumbnail.jpg"
     },
@@ -76,7 +77,8 @@
         "type": "gallery",
         "parentAlbum": "Switzerland",
         "imageLocations": [
-            "media/images/switzerland/luzern"
+            "media/images/switzerland/luzern",
+            "media/images/switzerland/luzern/film"
         ],
         "thumbnail": "../media/images/switzerland/thumbnails/luzern-thumbnail.jpg"
     },
@@ -85,7 +87,8 @@
         "type": "gallery",
         "parentAlbum": "Switzerland",
         "imageLocations": [
-            "media/images/switzerland/lauterbrunnen valley"
+            "media/images/switzerland/lauterbrunnen valley",
+            "media/images/switzerland/lauterbrunnen valley/film"
         ],
         "thumbnail": "../media/images/switzerland/thumbnails/lauterbrunnen-thumbnail.jpg"
     },
