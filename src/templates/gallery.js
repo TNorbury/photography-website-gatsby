@@ -16,6 +16,12 @@ export default ({ data }) => {
         }
     });
 
+    // If the number of files we have isn't divisible by 3, then we need to make sure
+    // the last row of images also gets included
+    if (!imageRows.includes(container)) {
+        imageRows.push(container);
+    }
+
     return (
         <Layout>
             <Container>
