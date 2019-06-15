@@ -94,6 +94,51 @@
     },
 
     {
+        "title": "Austria",
+        "type": "album",
+        "parentAlbum": "home",
+        "thumbnail": "../media/images/austria/thumbnails/austria-thumbnail.jpg"
+    },
+    {
+        "title": "Innsbruck",
+        "type": "gallery",
+        "parentAlbum": "Austria",
+        "imageLocations": [
+            "media/images/austria/innsbruck"
+        ],
+        "thumbnail": "../media/images/austria/thumbnails/innsbruck-thumbnail.jpg"
+    },
+    {
+        "title": "Salzburg",
+        "type": "gallery",
+        "parentAlbum": "Austria",
+        "imageLocations": [
+            "media/images/austria/salzburg",
+            "media/images/austria/salzburg/film"
+        ],
+        "thumbnail": "../media/images/austria/thumbnails/salzburg-thumbnail.jpg"
+    },
+    {
+        "title": "Hallstatt",
+        "type": "gallery",
+        "parentAlbum": "Austria",
+        "imageLocations": [
+            "media/images/austria/hallstatt"
+        ],
+        "thumbnail": "../media/images/austria/thumbnails/hallstatt-thumbnail.jpg"
+    },
+    {
+        "title": "Vienna",
+        "type": "gallery",
+        "parentAlbum": "Austria",
+        "imageLocations": [
+            "media/images/austria/vienna",
+            "media/images/austria/vienna/film"
+        ],
+        "thumbnail": "../media/images/austria/thumbnails/vienna-thumbnail.jpg"
+    },
+
+    {
         "title": "Colorado",
         "type": "gallery",
         "parentAlbum": "home",
