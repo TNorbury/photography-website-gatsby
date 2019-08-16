@@ -49,7 +49,7 @@ export const query = graphql`
                 node {
                     relativeDirectory
                     childImageSharp {
-                        fluid(quality: 90) {
+                        fluid(maxWidth: 2000) {
                             src
                             aspectRatio
                         }
