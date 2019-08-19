@@ -1,5 +1,10 @@
+/* This is the background color for all the background parts on the website */
+:root {
+    --background-color: rgba(240, 240, 240, 0.8);
+}
+
 html {
-    background-color: rgba(240, 240, 240, 0.8);
+    background-color: var(--background-color);
 }
 
 body {
@@ -14,8 +19,13 @@ a:hover {
     text-decoration: none;
 }
 
+
+.modal-open {
+    background-color: var(--background-color);
+}
+
 .layout {
-    background-color: rgba(240, 240, 240, 0.8);
+    background-color: var(--background-color);
     margin-bottom: 25px;
     margin-top: 75px;
 }
