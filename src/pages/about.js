@@ -38,7 +38,7 @@ export default ({ data }) => {
                                 I'd describe my style as street photography,
                                 since I take pictures of things I see while on
                                 the street and while I primarily shoot digital,
-                                I also love shooting to film, both on 35mm and
+                                I also love shooting film, both on 35mm and
                                 medium format. <br />
                                 Going back to the software engineering side of
                                 things, I made this entire website myself using
