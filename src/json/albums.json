@@ -103,9 +103,7 @@
         "title": "Innsbruck",
         "type": "gallery",
         "parentAlbum": "Austria",
-        "imageLocations": [
-            "media/images/austria/innsbruck"
-        ],
+        "imageLocations": ["media/images/austria/innsbruck"],
         "thumbnail": "../media/images/austria/thumbnails/innsbruck-thumbnail.jpg"
     },
     {
@@ -122,9 +120,7 @@
         "title": "Hallstatt",
         "type": "gallery",
         "parentAlbum": "Austria",
-        "imageLocations": [
-            "media/images/austria/hallstatt"
-        ],
+        "imageLocations": ["media/images/austria/hallstatt"],
         "thumbnail": "../media/images/austria/thumbnails/hallstatt-thumbnail.jpg"
     },
     {
@@ -201,5 +197,13 @@
         "parentAlbum": "home",
         "imageLocations": ["media/images/photo2"],
         "thumbnail": "../media/images/photo2/thumbnail/photo2-thumbnail.jpg"
+    },
+
+    {
+        "title": "Self-Portraits",
+        "type": "gallery",
+        "parentAlbum": "home",
+        "imageLocations": ["media/images/self-portraits"],
+        "thumbnail": "../media/images/self-portraits/DSC_6620.jpg"
     }
 ]
