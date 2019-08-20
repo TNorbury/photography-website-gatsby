@@ -36,7 +36,6 @@ module.exports = {
                 bucketName: 'www.tylernorbury.com',
                 protocol: 'https',
                 hostname: 'www.tylernorbury.com',
-                acl: null,
             },
         },
         {

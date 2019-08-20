@@ -14,7 +14,7 @@ exports.createPages = ({ actions }) => {
         pagePath += title;
 
         // We also want the path to be lower case. Also remove any whitespace
-        pagePath = pagePath.toLowerCase().replace(/ /g, "-").replace(/ü/g, "u");
+        pagePath = pagePath.toLowerCase().replace(/ /g, "-").replace(/ü/g, "u") + '/';
 
         // Determine which template to use based upon the type of the album
         var template = '';

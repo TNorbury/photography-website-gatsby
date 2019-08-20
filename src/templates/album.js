@@ -16,12 +16,14 @@ export default ({ data }) => {
                             // replace spaces w/ -
                             // and get rid of umlauts
                             link={
+                                './' +
                                 node.parentAlbum.toLowerCase() +
                                 '/' +
                                 node.title
                                     .toLowerCase()
                                     .replace(/ /g, '-')
-                                    .replace(/ü/g, 'u')
+                                    .replace(/ü/g, 'u') +
+                                '/'
                             }
                         />
                     ))}
