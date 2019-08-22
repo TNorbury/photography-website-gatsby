@@ -76,3 +76,6 @@ src/media/images
 
 # ignore vscode
 .vscode
+
+# ignore changes to the album file
+src/json/albums.json
