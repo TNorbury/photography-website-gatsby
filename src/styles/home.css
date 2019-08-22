@@ -1,0 +1,39 @@
+.slider-button {
+    color: white;
+    height: 100%;
+    width: 10vh;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+    position: absolute;
+    top: 0px;
+    font-size: 1.5rem;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); */
+}
+
+/* This is the button on the left side */
+.back-button {
+    left: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* box-shadow: 5px 0px 5px -2px rgba(0, 0, 0, 0.2); */
+}
+
+/* This is the button on the right side */
+.forward-button {
+    right: 0px;
+    /* box-shadow: -10px 0px 5px -2px rgba(0, 0, 0, 0.2); */
+}
+
+.slider-label {
+    position: absolute;
+    bottom: 20px;
+    /* width: 100%; */
+    text-align: left;
+    font-size: 2rem;
+    left: 15vh;
+    text-shadow: 0px 0px 5px white;
+}

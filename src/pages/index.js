@@ -16,7 +16,9 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import Img from 'gatsby-image';
 import { css } from '@emotion/core';
-import '../styles/home.css'
+import '../styles/home.css';
+
+import RightArrow from './../media/graphics/right_triangle.svg';
 
 export default class Home extends React.Component {
     render() {
@@ -52,24 +54,20 @@ export default class Home extends React.Component {
                                                         .src
                                                 }
                                             />
-                                            <p
-                                                css={css`
-                                                    position: absolute;
-                                                    top: 8px;
-                                                    left: 16px;
-                                                `}
+                                            <div
+                                                class="slider-label"
                                             >
                                                 {node.title}
-                                            </p>
+                                            </div>
                                         </Link>
                                     </Slide>
                                 )
                             )}
                         </Slider>
-                            <ButtonBack css={css`float:left`}>{'<'}</ButtonBack >
-                            {/* <DotGroup css={css`display:inline-block`} /> */}
+                        <ButtonBack class="back-button slider-button">{'<'}</ButtonBack>
+                        {/* <DotGroup css={css`display:inline-block`} /> */}
 
-                            <ButtonNext css={css`display:inline-block`}>{'>'}</ButtonNext>
+                        <ButtonNext class="forward-button slider-button">{'>'}</ButtonNext>
                     </CarouselProvider>
                 </Container>
             </Layout>
