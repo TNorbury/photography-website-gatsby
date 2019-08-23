@@ -14,36 +14,6 @@ import {
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../styles/home.css';
 
-<<<<<<< HEAD
-export default ({ data }) => {
-    return (
-        <Layout>
-            <Container
-                css={css`
-                    margin-right: auto;
-                `}
-            >
-                <Row>
-                    {data.allAlbumsJson.edges.map(({ node }) => (
-                        <AlbumCard
-                            title={node.title}
-                            thumbnail={node.thumbnail.childImageSharp.fixed.src}
-                            // replace spaces w/ -
-                            link={
-                                '/' +
-                                node.title
-                                    .toLowerCase()
-                                    .replace(/ /g, '-')
-                                    .replace(/ü/g, 'u') + '/'
-                            }
-                        />
-                    ))}
-                </Row>
-            </Container>
-        </Layout>
-    );
-};
-=======
 export default class Home extends React.Component {
     render() {
         return (
@@ -101,7 +71,6 @@ export default class Home extends React.Component {
         );
     }
 }
->>>>>>> carousel
 
 export const query = graphql`
     query {

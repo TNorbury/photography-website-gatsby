@@ -77,9 +77,5 @@ src/media/images
 # ignore vscode
 .vscode
 
-<<<<<<< HEAD
-src/json
-=======
 # ignore changes to the album file
->>>>>>> carousel
 src/json/albums.json
