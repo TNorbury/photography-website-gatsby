@@ -18,9 +18,23 @@ import Img from 'gatsby-image';
 import { css } from '@emotion/core';
 import '../styles/home.css';
 
-import RightArrow from './../media/graphics/right_triangle.svg';
-
 export default class Home extends React.Component {
+    updateLabel() {
+        console.log("hello")
+    }
+ 
+    componentDidMount() {
+        // Add an event listener to the slider so we know when it animates
+        var element = document.getElementsByClassName('slider!!!')[0];
+
+        // Code for Chrome, Safari and Opera
+        element.addEventListener('webkitAnimationEnd', this.updateLabel());
+
+        // Standard syntax
+        element.addEventListener('animationend', this.updateLabel());
+    }
+
+
     render() {
         return (
             <Layout>
@@ -30,13 +44,11 @@ export default class Home extends React.Component {
                         naturalSlideHeight={14}
                         totalSlides={this.props.data.allAlbumsJson.edges.length}
                     >
-                        <Slider>
-                            {/* <Slide index={0}>I am the first Slide.</Slide>
-                            <Slide index={1}>I am the second Slide.</Slide>
-                            <Slide index={2}>I am the third Slide.</Slide> */}
+                        <Slider
+                        classNameTray="slider!!!">
                             {this.props.data.allAlbumsJson.edges.map(
                                 ({ node }, index) => (
-                                    <Slide index={index}>
+                                    <Slide index={index} onAnimationEnd={this.updateLabel()} onWebkitAnimationEnd={this.updateLabel()}>
                                         <Link
                                             to={
                                                 '/' +
@@ -48,15 +60,14 @@ export default class Home extends React.Component {
                                             }
                                         >
                                             <Image
+                                                class="slider-image"
                                                 src={
                                                     node.thumbnail
                                                         .childImageSharp.fluid
                                                         .src
                                                 }
                                             />
-                                            <div
-                                                class="slider-label"
-                                            >
+                                            <div class="slider-label">
                                                 {node.title}
                                             </div>
                                         </Link>
@@ -64,10 +75,15 @@ export default class Home extends React.Component {
                                 )
                             )}
                         </Slider>
-                        <ButtonBack class="back-button slider-button">{'<'}</ButtonBack>
-                        {/* <DotGroup css={css`display:inline-block`} /> */}
+                        <ButtonBack class="back-button slider-button">
+                            <div class="slider-button-touch">
+                                <i class="arrow left" />
+                            </div>
+                        </ButtonBack>
 
-                        <ButtonNext class="forward-button slider-button">{'>'}</ButtonNext>
+                        <ButtonNext class="forward-button slider-button">
+                            <i class="arrow right" />
+                        </ButtonNext>
                     </CarouselProvider>
                 </Container>
             </Layout>

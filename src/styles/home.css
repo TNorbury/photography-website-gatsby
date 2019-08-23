@@ -1,17 +1,20 @@
 .slider-button {
     color: white;
+    /* height: 5vh; */
     height: 100%;
-    width: 10vh;
-    background-color: rgba(0, 0, 0, 0.05);
+    width: 5vh;
+    background-color: transparent;
     border-color: transparent;
     position: absolute;
-    top: 0px;
-    font-size: 1.5rem;
+    /* top: 45%; */
+    top: 0%;
+    font-size: 100%;
+    /* border-radius: 50px; */
+    align-content: center;
 }
 
 .slider-button:hover {
     background-color: rgba(0, 0, 0, 0.25);
-    /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); */
 }
 
 /* This is the button on the left side */
@@ -19,13 +22,18 @@
     left: 0px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    /* box-shadow: 5px 0px 5px -2px rgba(0, 0, 0, 0.2); */
 }
 
 /* This is the button on the right side */
 .forward-button {
     right: 0px;
-    /* box-shadow: -10px 0px 5px -2px rgba(0, 0, 0, 0.2); */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.slider-button-touch {
+    height: 100%;
+    color: white;
 }
 
 .slider-label {
@@ -33,7 +41,42 @@
     bottom: 20px;
     /* width: 100%; */
     text-align: left;
-    font-size: 2rem;
-    left: 15vh;
-    text-shadow: 0px 0px 5px white;
+    font-size: 200%;
+    left: 12vh;
+    /* color: white */
+    /* text-shadow: 0px 0px 5px white; */
+}
+
+
+/* Arrow Icon */
+i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    bottom:50%;
+    width: 10px;
+    height: 10px;
+}
+
+/* Arrow Icon right */
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    right: 45%;
+}
+
+/* Arrow Icon left */
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    left: 45%;
+}
+
+.slider-image {
+    filter: brightness(85%);
+    display: block;
+    width: 100%;
+    height: 100%;
 }
