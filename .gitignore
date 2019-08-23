@@ -78,3 +78,4 @@ src/media/images
 .vscode
 
 src/json
+src/json/albums.json
