@@ -204,6 +204,6 @@
         "type": "gallery",
         "parentAlbum": "home",
         "imageLocations": ["media/images/self-portraits"],
-        "thumbnail": "../media/images/self-portraits/DSC_6620.jpg"
+        "thumbnail": "../media/images/self-portraits/thumbnail/thumbnail.jpg"
     }
 ]

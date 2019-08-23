@@ -1,0 +1,98 @@
+.slider {
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.5);
+}
+
+.slider-button {
+    color: white;
+    height: 100%;
+    width: 5vh;
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    top: 0%;
+    font-size: 100%;
+    align-content: center;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* This is the button on the left side */
+.back-button {
+    left: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* This is the button on the right side */
+.forward-button {
+    right: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.slider-label {
+    position: absolute;
+    bottom: 20px;
+    text-align: left;
+    font-size: 200%;
+    color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    text-align: center;
+}
+
+.slider-dots {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Hijacking the two classes of the dots */
+.carousel__dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    border-color:transparent;
+    background-color: rgb(170, 170, 170);
+    box-shadow: 0px 1px 3px black;
+}
+
+.carousel__dot--selected {
+    background-color: rgb(32, 32, 32);
+}
+
+/* Arrow Icon */
+i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    bottom:50%;
+    width: 10px;
+    height: 10px;
+}
+
+/* Arrow Icon right */
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    right: 45%;
+}
+
+/* Arrow Icon left */
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    left: 45%;
+}
+
+.slider-image {
+    filter: brightness(85%);
+    display: block;
+    width: 100%;
+    height: 100%;
+}
