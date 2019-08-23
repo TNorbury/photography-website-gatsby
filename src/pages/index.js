@@ -1,8 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
-import AlbumCard from '../components/albumCard';
 import { graphql, Link } from 'gatsby';
-import { Container, Row } from 'reactstrap';
+import { Container } from 'reactstrap';
 import {
     CarouselProvider,
     Slider,
@@ -13,28 +12,9 @@ import {
     DotGroup,
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-
-import Img from 'gatsby-image';
-import { css } from '@emotion/core';
 import '../styles/home.css';
 
 export default class Home extends React.Component {
-    updateLabel() {
-        console.log("hello")
-    }
- 
-    componentDidMount() {
-        // Add an event listener to the slider so we know when it animates
-        var element = document.getElementsByClassName('slider!!!')[0];
-
-        // Code for Chrome, Safari and Opera
-        element.addEventListener('webkitAnimationEnd', this.updateLabel());
-
-        // Standard syntax
-        element.addEventListener('animationend', this.updateLabel());
-    }
-
-
     render() {
         return (
             <Layout>
@@ -43,12 +23,14 @@ export default class Home extends React.Component {
                         naturalSlideWidth={20}
                         naturalSlideHeight={14}
                         totalSlides={this.props.data.allAlbumsJson.edges.length}
+                        isPlaying={true}
+                        interval={3000}
+                        className="slider"
                     >
-                        <Slider
-                        classNameTray="slider!!!">
+                        <Slider>
                             {this.props.data.allAlbumsJson.edges.map(
                                 ({ node }, index) => (
-                                    <Slide index={index} onAnimationEnd={this.updateLabel()} onWebkitAnimationEnd={this.updateLabel()}>
+                                    <Slide index={index}>
                                         <Link
                                             to={
                                                 '/' +
@@ -76,14 +58,13 @@ export default class Home extends React.Component {
                             )}
                         </Slider>
                         <ButtonBack class="back-button slider-button">
-                            <div class="slider-button-touch">
-                                <i class="arrow left" />
-                            </div>
+                            <i class="arrow left" />
                         </ButtonBack>
 
                         <ButtonNext class="forward-button slider-button">
                             <i class="arrow right" />
                         </ButtonNext>
+                        <DotGroup className="slider-dots"></DotGroup>
                     </CarouselProvider>
                 </Container>
             </Layout>

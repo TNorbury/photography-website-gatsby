@@ -1,15 +1,16 @@
+.slider {
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.5);
+}
+
 .slider-button {
     color: white;
-    /* height: 5vh; */
     height: 100%;
     width: 5vh;
     background-color: transparent;
     border-color: transparent;
     position: absolute;
-    /* top: 45%; */
     top: 0%;
     font-size: 100%;
-    /* border-radius: 50px; */
     align-content: center;
 }
 
@@ -31,22 +32,37 @@
     border-bottom-left-radius: 5px;
 }
 
-.slider-button-touch {
-    height: 100%;
-    color: white;
-}
-
 .slider-label {
     position: absolute;
     bottom: 20px;
-    /* width: 100%; */
     text-align: left;
     font-size: 200%;
-    left: 12vh;
-    /* color: white */
-    /* text-shadow: 0px 0px 5px white; */
+    color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    text-align: center;
 }
 
+.slider-dots {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Hijacking the two classes of the dots */
+.carousel__dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    border-color:transparent;
+    background-color: rgb(170, 170, 170);
+    box-shadow: 0px 1px 3px black;
+}
+
+.carousel__dot--selected {
+    background-color: rgb(32, 32, 32);
+}
 
 /* Arrow Icon */
 i {
