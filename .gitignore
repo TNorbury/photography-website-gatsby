@@ -76,3 +76,5 @@ src/media/images
 
 # ignore vscode
 .vscode
+
+src/json
