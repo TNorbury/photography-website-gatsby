@@ -42,7 +42,7 @@ export default class Home extends React.Component {
                                             }
                                         >
                                             <Image
-                                                class="slider-image"
+                                                className="slider-image"
                                                 src={
                                                     node.thumbnail
                                                         .childImageSharp.fluid
@@ -57,11 +57,11 @@ export default class Home extends React.Component {
                                 )
                             )}
                         </Slider>
-                        <ButtonBack class="back-button slider-button">
+                        <ButtonBack className="back-button slider-button">
                             <i class="arrow left" />
                         </ButtonBack>
 
-                        <ButtonNext class="forward-button slider-button">
+                        <ButtonNext className="forward-button slider-button">
                             <i class="arrow right" />
                         </ButtonNext>
                         <DotGroup className="slider-dots"></DotGroup>
