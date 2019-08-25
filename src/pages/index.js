@@ -10,6 +10,7 @@ import {
     ButtonNext,
     Image,
     DotGroup,
+    Dot,
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../styles/home.css';
@@ -29,7 +30,7 @@ export default class Home extends React.Component {
                     >
                         <Slider>
                             {this.props.data.allAlbumsJson.edges.map(
-                                ({ node }, index) => (
+                                ({ node, index }) => (
                                     <Slide index={index}>
                                         <Link
                                             to={
@@ -64,7 +65,16 @@ export default class Home extends React.Component {
                         <ButtonNext className="forward-button slider-button">
                             <i class="arrow right" />
                         </ButtonNext>
-                        <DotGroup className="slider-dots"></DotGroup>
+                        <div className="slider-dots">
+                            {this.props.data.allAlbumsJson.edges.map(
+                                ({ node }, index) => (
+                                    <Dot slide={index}>
+                                        <span className="dot-tooltip">{node.title}</span>
+                                    </Dot>
+                                )
+                            )}
+                        </div>
+                        {/* <DotGroup className="slider-dots"></DotGroup> */}
                     </CarouselProvider>
                 </Container>
             </Layout>
