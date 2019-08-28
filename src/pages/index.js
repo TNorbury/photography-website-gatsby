@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import {
     CarouselProvider,
     Slider,
@@ -20,62 +20,73 @@ export default class Home extends React.Component {
         return (
             <Layout>
                 <Container>
-                    <CarouselProvider
-                        naturalSlideWidth={20}
-                        naturalSlideHeight={14}
-                        totalSlides={this.props.data.allAlbumsJson.edges.length}
-                        isPlaying={true}
-                        interval={3000}
-                        className="slider"
-                    >
-                        <Slider>
-                            {this.props.data.allAlbumsJson.edges.map(
-                                ({ node, index }) => (
-                                    <Slide index={index}>
-                                        <Link
-                                            to={
-                                                '/' +
-                                                node.title
-                                                    .toLowerCase()
-                                                    .replace(/ /g, '-')
-                                                    .replace(/ü/g, 'u') +
-                                                '/'
-                                            }
-                                        >
-                                            <Image
-                                                className="slider-image"
-                                                src={
-                                                    node.thumbnail
-                                                        .childImageSharp.fluid
-                                                        .src
-                                                }
-                                            />
-                                            <div class="slider-label">
-                                                {node.title}
-                                            </div>
-                                        </Link>
-                                    </Slide>
-                                )
-                            )}
-                        </Slider>
-                        <ButtonBack className="back-button slider-button">
-                            <i class="arrow left" />
-                        </ButtonBack>
+                    <Row>
+                        <Col>
+                            <CarouselProvider
+                                naturalSlideWidth={20}
+                                naturalSlideHeight={14}
+                                totalSlides={
+                                    this.props.data.allAlbumsJson.edges.length
+                                }
+                                isPlaying={true}
+                                interval={3000}
+                                className="slider"
+                            >
+                                <Slider>
+                                    {this.props.data.allAlbumsJson.edges.map(
+                                        ({ node, index }) => (
+                                            <Slide index={index}>
+                                                <Link
+                                                    to={
+                                                        '/' +
+                                                        node.title
+                                                            .toLowerCase()
+                                                            .replace(/ /g, '-')
+                                                            .replace(
+                                                                /ü/g,
+                                                                'u'
+                                                            ) +
+                                                        '/'
+                                                    }
+                                                >
+                                                    <Image
+                                                        className="slider-image"
+                                                        src={
+                                                            node.thumbnail
+                                                                .childImageSharp
+                                                                .fluid.src
+                                                        }
+                                                    />
+                                                    <div class="slider-label">
+                                                        {node.title}
+                                                    </div>
+                                                </Link>
+                                            </Slide>
+                                        )
+                                    )}
+                                </Slider>
+                                <ButtonBack className="back-button slider-button">
+                                    <i class="arrow left" />
+                                </ButtonBack>
 
-                        <ButtonNext className="forward-button slider-button">
-                            <i class="arrow right" />
-                        </ButtonNext>
-                        <div className="slider-dots">
-                            {this.props.data.allAlbumsJson.edges.map(
-                                ({ node }, index) => (
-                                    <Dot slide={index}>
-                                        <span className="dot-tooltip">{node.title}</span>
-                                    </Dot>
-                                )
-                            )}
-                        </div>
-                        {/* <DotGroup className="slider-dots"></DotGroup> */}
-                    </CarouselProvider>
+                                <ButtonNext className="forward-button slider-button">
+                                    <i class="arrow right" />
+                                </ButtonNext>
+                                <div className="slider-dots">
+                                    {this.props.data.allAlbumsJson.edges.map(
+                                        ({ node }, index) => (
+                                            <Dot slide={index}>
+                                                <span className="dot-tooltip">
+                                                    {node.title}
+                                                </span>
+                                            </Dot>
+                                        )
+                                    )}
+                                </div>
+                                {/* <DotGroup className="slider-dots"></DotGroup> */}
+                            </CarouselProvider>
+                        </Col>
+                    </Row>
                 </Container>
             </Layout>
         );
