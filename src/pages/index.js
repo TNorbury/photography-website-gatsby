@@ -1,77 +1,132 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
-import { Container, Row, Col, Media } from 'reactstrap';
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  Image,
-  Dot,
-} from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
-import '../styles/home.css';
+import { Container, Row, Col } from 'reactstrap';
+import '../styles/slider.css';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import Img from 'gatsby-image';
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentIndex: 0,
+      galleryItems: this.galleryItems(),
+    };
+
+    this.navButton = this.navButton.bind(this);
+  }
+
+  // Changes to the slide at the given index
+  slideTo = i => this.setState({ currentIndex: i });
+
+  onSlideChanged = e => this.setState({ currentIndex: e.item });
+
+  // Moves to the next or previous slide
+  slideNext = () =>
+    this.setState({
+      currentIndex:
+        (this.state.currentIndex + 1) % (this.state.galleryItems.length + 1),
+    });
+
+  slidePrev = () =>
+    this.setState({
+      currentIndex:
+        (this.state.currentIndex - 1) % this.state.galleryItems.length,
+    });
+
+  // Creates the items that will be displayed in the carousel
+  galleryItems() {
+    const handleOnDragStart = e => e.preventDefault();
+    return this.props.data.allAlbumsJson.edges.map(({ node }) => (
+      <div>
+        <Img
+          fluid={node.thumbnail.childImageSharp.fluid}
+          className="slider-image"
+          onDragStart={handleOnDragStart}
+        ></Img>
+        <Link
+          to={
+            '/' +
+            node.title
+              .toLowerCase()
+              .replace(/ /g, '-')
+              .replace(/ü/g, 'u') +
+            '/'
+          }
+        >
+          <span className="label-touch">
+            <span className="slider-label">{node.title}</span>
+          </span>
+        </Link>
+      </div>
+    ));
+  }
+
+  navButton(item, i) {
+    var sliderClass = 'slider-dot';
+
+    // We have speical styling for the selected dot
+    if (this.state.currentIndex === i) {
+      sliderClass += ' slider-dot--selected';
+    }
+    console.log(item.node);
+    return (
+      <li onClick={() => this.slideTo(i)} className={sliderClass}>
+        <span className="dot-tooltip">{item.node.title}</span>
+      </li>
+    );
+  }
+
   render() {
     return (
       <Layout>
         <Container>
           <Row>
-            <Col>
-              <CarouselProvider
-                naturalSlideWidth={20}
-                naturalSlideHeight={14}
-                totalSlides={this.props.data.allAlbumsJson.edges.length}
-                isPlaying={true}
-                interval={3000}
-                className="slider"
-              >
-                <Slider>
-                  {this.props.data.allAlbumsJson.edges.map(
-                    ({ node, index }) => (
-                      <Slide index={index}>
-                        <Link
-                          to={
-                            '/' +
-                            node.title
-                              .toLowerCase()
-                              .replace(/ /g, '-')
-                              .replace(/ü/g, 'u') +
-                            '/'
-                          }
-                        >
-                          <Image
-                            className="slider-image"
-                            src={node.thumbnail.childImageSharp.fluid.src}
-                          />
-                          <div class="slider-label">{node.title}</div>
-                        </Link>
-                      </Slide>
-                    )
-                  )}
-                </Slider>
-                <ButtonBack className="back-button slider-button">
-                  <i class="arrow left" />
-                </ButtonBack>
+            <Col className="slider">
+              <AliceCarousel
+                items={this.state.galleryItems}
+                // We made our own buttons and dots, so hide the factory ones
+                dotsDisabled={true}
+                buttonsDisabled={true}
+                mouseTrackingEnabled={true}
+                touchTrackingEnabled={true}
+                // Auto play is on by default, with a 3 second interval. Any
+                // interaction with the slider stops auto play
+                autoPlay={true}
+                autoPlayInterval={3000}
+                disableAutoPlayOnAction={true}
+                stopAutoPlayOnHover={true}
+                autoHeight={true}
+                slideToIndex={this.state.currentIndex}
+                onSlideChanged={this.onSlideChanged}
+              ></AliceCarousel>
 
-                <ButtonNext className="forward-button slider-button">
-                  <i class="arrow right" />
-                </ButtonNext>
-                {/* These dots will appear under the slider */}
-                <div className="slider-dots">
-                  {this.props.data.allAlbumsJson.edges.map(
-                    ({ node }, index) => (
-                      <Dot slide={index}>
-                        <span className="dot-tooltip">{node.title}</span>
-                      </Dot>
-                    )
-                  )}
-                </div>
-                {/* <DotGroup className="slider-dots"></DotGroup> */}
-              </CarouselProvider>
+              {/* slider dots */}
+              <ul className="slider-dots">
+                {this.props.data.allAlbumsJson.edges.map(this.navButton)}
+              </ul>
+
+              {/* The left-facing "previous" arrow */}
+              <div className="slider-button-left-wrapper">
+                <span
+                  className="slider-button-touch"
+                  onClick={() => this.slidePrev()}
+                >
+                  <i className="arrow arrow-left"></i>
+                </span>
+              </div>
+
+              {/* The right-facing "next" arrow */}
+              <div className="slider-button-right-wrapper">
+                <span
+                  className="slider-button-touch"
+                  onClick={() => this.slideNext()}
+                >
+                  <i className="arrow arrow-right"></i>
+                </span>
+              </div>
             </Col>
           </Row>
         </Container>

@@ -2,7 +2,7 @@
   "name": "photography-website",
   "private": true,
   "description": "My photography website",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -32,8 +32,8 @@
     "gatsby-transformer-json": "^2.2.20",
     "gatsby-transformer-sharp": "^2.3.6",
     "jquery": "^3.4.1",
-    "pure-react-carousel": "^1.24.1",
     "react": "^16.12.0",
+    "react-alice-carousel": "^1.16.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
