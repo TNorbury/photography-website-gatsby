@@ -2,17 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
 import { Container, Row, Col } from 'reactstrap';
-// import {
-//   CarouselProvider,
-//   Slider,
-//   Slide,
-//   ButtonBack,
-//   ButtonNext,
-//   Image,
-//   Dot,
-// } from 'pure-react-carousel';
-// import 'pure-react-carousel/dist/react-carousel.es.css';
-import '../styles/home.css';
+import '../styles/slider.css';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Img from 'gatsby-image';
@@ -28,10 +18,12 @@ export default class Home extends React.Component {
     this.navButton = this.navButton.bind(this);
   }
 
+  // Changes to the slide at the given index
   slideTo = i => this.setState({ currentIndex: i });
 
   onSlideChanged = e => this.setState({ currentIndex: e.item });
 
+  // Moves to the next or previous slide
   slideNext = () =>
     this.setState({
       currentIndex:
@@ -46,8 +38,14 @@ export default class Home extends React.Component {
 
   // Creates the items that will be displayed in the carousel
   galleryItems() {
+    const handleOnDragStart = e => e.preventDefault();
     return this.props.data.allAlbumsJson.edges.map(({ node }) => (
       <div>
+        <Img
+          fluid={node.thumbnail.childImageSharp.fluid}
+          className="slider-image"
+          onDragStart={handleOnDragStart}
+        ></Img>
         <Link
           to={
             '/' +
@@ -57,11 +55,11 @@ export default class Home extends React.Component {
               .replace(/ü/g, 'u') +
             '/'
           }
-        ></Link>
-        <Img
-          fluid={node.thumbnail.childImageSharp.fluid}
-          className="slider-image"
-        ></Img>
+        >
+          <span className="label-touch">
+            <span className="slider-label">{node.title}</span>
+          </span>
+        </Link>
       </div>
     ));
   }
@@ -73,9 +71,10 @@ export default class Home extends React.Component {
     if (this.state.currentIndex === i) {
       sliderClass += ' slider-dot--selected';
     }
+    console.log(item.node);
     return (
       <li onClick={() => this.slideTo(i)} className={sliderClass}>
-        <span className="dot-tooltip"></span>
+        <span className="dot-tooltip">{item.node.title}</span>
       </li>
     );
   }
@@ -85,23 +84,31 @@ export default class Home extends React.Component {
       <Layout>
         <Container>
           <Row>
-            <Col>
+            <Col className="slider">
               <AliceCarousel
                 items={this.state.galleryItems}
+                // We made our own buttons and dots, so hide the factory ones
                 dotsDisabled={true}
                 buttonsDisabled={true}
                 mouseTrackingEnabled={true}
                 touchTrackingEnabled={true}
-                autoPlay={false}
-                autoPlayInterval={5000}
+                // Auto play is on by default, with a 3 second interval. Any
+                // interaction with the slider stops auto play
+                autoPlay={true}
+                autoPlayInterval={3000}
+                disableAutoPlayOnAction={true}
                 stopAutoPlayOnHover={true}
                 autoHeight={true}
                 slideToIndex={this.state.currentIndex}
                 onSlideChanged={this.onSlideChanged}
               ></AliceCarousel>
+
+              {/* slider dots */}
               <ul className="slider-dots">
                 {this.props.data.allAlbumsJson.edges.map(this.navButton)}
               </ul>
+
+              {/* The left-facing "previous" arrow */}
               <div className="slider-button-left-wrapper">
                 <span
                   className="slider-button-touch"
@@ -111,6 +118,7 @@ export default class Home extends React.Component {
                 </span>
               </div>
 
+              {/* The right-facing "next" arrow */}
               <div className="slider-button-right-wrapper">
                 <span
                   className="slider-button-touch"
