@@ -38,7 +38,6 @@ export default class Slider extends React.Component {
   // Creates the items that will be displayed in the carousel
   galleryItems() {
     const handleOnDragStart = e => e.preventDefault();
-    console.log(this.state);
 
     // We have to convert the albums object from the props into an array so we
     // can iterate over it
@@ -83,8 +82,6 @@ export default class Slider extends React.Component {
   }
 
   render() {
-    // return <div>Slider </div>;
-    console.log(this.state.galleryItems);
     return (
       <Col className="slider">
         <AliceCarousel
