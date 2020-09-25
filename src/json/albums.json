@@ -1,210 +1,58 @@
 [
   {
-    "title": "Germany",
-    "type": "album",
-    "parentAlbum": "home",
-    "thumbnail": "../media/images/germany/thumbnails/germany-thumbnail.jpg"
+      "title": "Austria",
+      "type": "album",
+      "parentAlbum": "home",
+      "thumbnail": "../media/images/austria/thumbnails/austria-thumbnail.jpg"
   },
   {
-    "title": "Munich",
-    "type": "gallery",
-    "parentAlbum": "Germany",
-    "imageLocations": [
-      "media/images/germany/munich",
-      "media/images/germany/munich/film"
-    ],
-    "thumbnail": "../media/images/germany/thumbnails/munich-thumbnail.jpg"
+      "title": "Innsbruck",
+      "type": "gallery",
+      "parentAlbum": "Austria", 
+      "imageLocations": ["media/images/austria/innsbruck"],
+      "thumbnail": "../media/images/austria/thumbnails/innsbruck-thumbnail.jpg"
   },
   {
-    "title": "Nuremberg",
-    "type": "gallery",
-    "parentAlbum": "Germany",
-    "imageLocations": [
-      "media/images/germany/nuremberg",
-      "media/images/germany/nuremberg/film"
-    ],
-    "thumbnail": "../media/images/germany/thumbnails/nuremberg-thumbnail.jpg"
+      "title": "Salzburg",
+      "type": "gallery",
+      "parentAlbum": "Austria",
+      "imageLocations": [
+          "media/images/austria/salzburg",
+          "media/images/austria/salzburg/film"
+      ],
+      "thumbnail": "../media/images/austria/thumbnails/salzburg-thumbnail.jpg"
   },
   {
-    "title": "Leipzig & Wittenberg",
-    "type": "gallery",
-    "parentAlbum": "Germany",
-    "imageLocations": [
-      "media/images/germany/leipzig",
-      "media/images/germany/leipzig/film"
-    ],
-    "thumbnail": "../media/images/germany/thumbnails/leipzig-thumbnail.jpg"
+      "title": "Hallstatt",
+      "type": "gallery",
+      "parentAlbum": "Austria",
+      "imageLocations": ["media/images/austria/hallstatt"],
+      "thumbnail": "../media/images/austria/thumbnails/hallstatt-thumbnail.jpg"
   },
   {
-    "title": "Dresden",
-    "type": "gallery",
-    "parentAlbum": "Germany",
-    "imageLocations": [
-      "media/images/germany/dresden",
-      "media/images/germany/dresden/film"
-    ],
-    "thumbnail": "../media/images/germany/thumbnails/dresden-thumbnail.jpg"
-  },
-  {
-    "title": "Berlin",
-    "type": "gallery",
-    "parentAlbum": "Germany",
-    "imageLocations": [
-      "media/images/germany/berlin",
-      "media/images/germany/berlin/film"
-    ],
-    "thumbnail": "../media/images/germany/thumbnails/berlin-thumbnail.jpg"
+      "title": "Vienna",
+      "type": "gallery",
+      "parentAlbum": "Austria",
+      "imageLocations": [
+          "media/images/austria/vienna",
+          "media/images/austria/vienna/film"
+      ],
+      "thumbnail": "../media/images/austria/thumbnails/vienna-thumbnail.jpg"
   },
 
   {
-    "title": "Switzerland",
-    "type": "album",
-    "parentAlbum": "home",
-    "thumbnail": "../media/images/switzerland/thumbnails/swiss-thumbnail.jpg"
-  },
-  {
-    "title": "Zürich",
-    "type": "gallery",
-    "parentAlbum": "Switzerland",
-    "imageLocations": [
-      "media/images/switzerland/zurich",
-      "media/images/switzerland/zurich/film"
-    ],
-    "thumbnail": "../media/images/switzerland/thumbnails/zurich-thumbnail.jpg"
-  },
-  {
-    "title": "Luzern",
-    "type": "gallery",
-    "parentAlbum": "Switzerland",
-    "imageLocations": [
-      "media/images/switzerland/luzern",
-      "media/images/switzerland/luzern/film"
-    ],
-    "thumbnail": "../media/images/switzerland/thumbnails/luzern-thumbnail.jpg"
-  },
-  {
-    "title": "Lauterbrunnen Valley",
-    "type": "gallery",
-    "parentAlbum": "Switzerland",
-    "imageLocations": [
-      "media/images/switzerland/lauterbrunnen valley",
-      "media/images/switzerland/lauterbrunnen valley/film"
-    ],
-    "thumbnail": "../media/images/switzerland/thumbnails/lauterbrunnen-thumbnail.jpg"
+      "title": "Self-Portraits",
+      "type": "gallery",
+      "parentAlbum": "home",
+      "imageLocations": ["media/images/self-portraits"],
+      "thumbnail": "../media/images/self-portraits/thumbnail/thumbnail.jpg"
   },
 
   {
-    "title": "Austria",
-    "type": "album",
-    "parentAlbum": "home",
-    "thumbnail": "../media/images/austria/thumbnails/austria-thumbnail.jpg"
-  },
-  {
-    "title": "Innsbruck",
-    "type": "gallery",
-    "parentAlbum": "Austria",
-    "imageLocations": ["media/images/austria/innsbruck"],
-    "thumbnail": "../media/images/austria/thumbnails/innsbruck-thumbnail.jpg"
-  },
-  {
-    "title": "Salzburg",
-    "type": "gallery",
-    "parentAlbum": "Austria",
-    "imageLocations": [
-      "media/images/austria/salzburg",
-      "media/images/austria/salzburg/film"
-    ],
-    "thumbnail": "../media/images/austria/thumbnails/salzburg-thumbnail.jpg"
-  },
-  {
-    "title": "Hallstatt",
-    "type": "gallery",
-    "parentAlbum": "Austria",
-    "imageLocations": ["media/images/austria/hallstatt"],
-    "thumbnail": "../media/images/austria/thumbnails/hallstatt-thumbnail.jpg"
-  },
-  {
-    "title": "Vienna",
-    "type": "gallery",
-    "parentAlbum": "Austria",
-    "imageLocations": [
-      "media/images/austria/vienna",
-      "media/images/austria/vienna/film"
-    ],
-    "thumbnail": "../media/images/austria/thumbnails/vienna-thumbnail.jpg"
-  },
-
-  {
-    "title": "Colorado",
-    "type": "gallery",
-    "parentAlbum": "home",
-    "imageLocations": ["media/images/colorado"],
-    "thumbnail": "../media/images/colorado/thumbnail/colorado-thumbnail.jpg"
-  },
-
-  {
-    "title": "Film",
-    "type": "album",
-    "parentAlbum": "home",
-    "thumbnail": "../media/images/film/thumbnails/film_thumbnail.jpg"
-  },
-  {
-    "title": "35mm",
-    "type": "gallery",
-    "parentAlbum": "Film",
-    "imageLocations": ["media/images/film/35mm"],
-    "thumbnail": "../media/images/film/thumbnails/35_thumbnail.jpg"
-  },
-  {
-    "title": "Medium Format",
-    "type": "gallery",
-    "parentAlbum": "Film",
-    "imageLocations": ["media/images/film/medium format"],
-    "thumbnail": "../media/images/film/thumbnails/mf_thumbnail.jpg"
-  },
-
-  {
-    "title": "Portland",
-    "type": "album",
-    "parentAlbum": "home",
-    "thumbnail": "../media/images/portland/thumbnail/thumbnail.jpg"
-  },
-  {
-    "title": "Portland 2019",
-    "type": "gallery",
-    "parentAlbum": "Portland",
-    "imageLocations": ["media/images/portland/2019"],
-    "thumbnail": "../media/images/portland/thumbnail/2019.jpg"
-  },
-  {
-    "title": "Bridge Walk",
-    "type": "gallery",
-    "parentAlbum": "Portland",
-    "imageLocations": ["media/images/portland/bridges"],
-    "thumbnail": "../media/images/portland/thumbnail/img553.jpg"
-  },
-
-  {
-    "title": "LA",
-    "type": "gallery",
-    "parentAlbum": "home",
-    "imageLocations": ["media/images/LA"],
-    "thumbnail": "../media/images/LA/thumbnail/LA-thumbnail.jpg"
-  },
-
-  {
-    "title": "Photography 2",
-    "type": "gallery",
-    "parentAlbum": "home",
-    "imageLocations": ["media/images/photo2"],
-    "thumbnail": "../media/images/photo2/thumbnail/photo2-thumbnail.jpg"
-  },
-
-  {
-    "title": "Self-Portraits",
-    "type": "gallery",
-    "parentAlbum": "home",
-    "imageLocations": ["media/images/self-portraits"],
-    "thumbnail": "../media/images/self-portraits/thumbnail/thumbnail.jpg"
+      "title": "Self-Portraits2",
+      "type": "gallery",
+      "parentAlbum": "home",
+      "imageLocations": ["media/images/self-portraits"],
+      "thumbnail": "../media/images/self-portraits/thumbnail/thumbnail.jpg"
   }
 ]
